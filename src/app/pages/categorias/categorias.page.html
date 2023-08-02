@@ -1,0 +1,101 @@
+<ion-header>
+  <app-header></app-header>
+</ion-header>
+
+
+<ion-content>
+
+  <ion-refresher slot="fixed" (ionRefresh)="handleRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <div class="contenedorProd">
+    <div class="contenedorPrincipalProductos">
+      <div class="contenedorProductos">
+        <div>
+  
+          <h2 class="tituloSeccion">Categorías</h2>
+  
+          <ion-list>
+            <div *ngFor="let categoria of productosAgrupados | keyvalue" (click)="mostrarCategoria(categoria.key)"
+              class="contenedorPrincipalCategorias">
+              <span>{{ categoria.key }}</span>
+            </div>
+          </ion-list>
+        </div>
+      </div>
+  
+      <div class="contenedorTotal">
+  
+        <h2 class="tituloSeccion">{{titulo}}</h2>
+  
+        <ion-grid *ngIf="productosResponse">
+          <ion-row>
+            <ion-col size="4" *ngFor="let item of productosResponse">
+              <ion-card mode="md" class="card">
+                <ion-card-header class="cardHeader">
+                  <ion-img src="{{item.image}}" class="cardImagen"></ion-img>
+                </ion-card-header>
+                <ion-card-content class="cardContent">
+                  <div class="titulo">
+                    {{item.title | slice:0:25 }}{{ item.title.length > 25 ? '...' : '' }}
+                  </div>
+                  <br>
+                  <div class="precio">
+                    $ {{item.price}}
+                  </div>
+  
+  
+                  <ion-button expand="block" class="botonAmarillo sizeContentButton" (click)="verDetalles(item.idItem)">
+                    Ver más
+                  </ion-button>
+                </ion-card-content>
+              </ion-card>
+  
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+  
+  
+        <ion-grid *ngIf="!productosResponse">
+          <ion-row>
+            <ion-col size="4" *ngFor="let num of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]">
+  
+              <div>
+                <ion-card mode="md" class="card">
+                  <ion-card-header class="cardHeader">
+  
+                    <ion-thumbnail>
+                      <ion-skeleton-text [animated]="true"></ion-skeleton-text>
+                    </ion-thumbnail>
+                  </ion-card-header>
+                  <ion-card-content class="cardContent">
+                    <div class="titulo">
+                      <ion-skeleton-text [animated]="true"></ion-skeleton-text>
+                    </div>
+                    <br>
+                    <div class="precio">
+                      <ion-skeleton-text [animated]="true"></ion-skeleton-text>
+                    </div>
+  
+                  </ion-card-content>
+                </ion-card>
+              </div>
+  
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+  
+  
+    </div>
+  </div>
+
+  
+
+
+
+
+
+
+</ion-content>

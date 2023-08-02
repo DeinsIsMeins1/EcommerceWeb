@@ -1,0 +1,115 @@
+.webIcono {
+  font-size: 25px;
+  padding: 0 10px;
+}
+
+.itemFormulario {
+  border: 1px solid #fff;
+  --border-color: var(--ion-item-border-color, var(--ion-border-color, var(--ion-color-step-150, rgb(255, 255, 255))));
+}
+
+.inputFormulario {
+  border: 0px solid #000;
+  border-radius: 50px;
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+  background: var(--gray4);
+  min-height: 29px;
+  width: 90%;
+  padding-left: 17px;
+}
+
+ion-input.has-focus {
+  --caret-color: transparent !important;
+}
+
+.div-blanco {
+  color: #000;
+}
+
+.itemLabel {
+  margin-left: 10px;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+.mdc-text-field--filled:not(.mdc-text-field--disabled) {
+  background-color: rgb(255, 255, 255);
+}
+
+.matOption {
+  margin: 6px 0px;
+}
+
+/* navbar.css */
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ffffff;
+  /* Cambia el color de fondo según tus preferencias */
+  height: 60px;
+  /* Ajusta la altura según tus necesidades */
+  padding: 0 10px;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-title {
+  font-size: 20px;
+  /* Tamaño de fuente del título */
+  color: #000000;
+  /* Cambia el color del texto según tus preferencias */
+  font-weight: bold;
+  margin-left: 10px;
+  /* Margen izquierdo para el título */
+}
+
+.navbar-search {
+  flex: 1;
+  margin: 0 10px;
+  display: flex;
+}
+
+.navbar-search form {
+  flex: 1;
+}
+
+.navbar-search input {
+  width: 100%;
+}
+
+.navbar-item {
+  margin-right: 10px;
+  /* Margen derecho entre elementos de la barra de navegación */
+  color: #000000;
+  /* Cambia el color del texto según tus preferencias */
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Ajusta la altura según tus necesidades */
+}
+
+.flex-items {
+  flex: 1;
+}
+
+/* Remueve los estilos flex de los flex-items que no necesitas */
+.flex-items:nth-child(1),
+.flex-items:nth-child(3) {
+  flex: initial;
+}
+
+.logo {
+  height: 45px;
+  margin: 0 auto; /* Centra horizontalmente el logo */
+}

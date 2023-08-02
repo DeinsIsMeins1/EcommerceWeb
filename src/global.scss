@@ -1,0 +1,77 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "@ionic/angular/css/normalize.css";
+@import "@ionic/angular/css/structure.css";
+@import "@ionic/angular/css/typography.css";
+@import '@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import "@ionic/angular/css/padding.css";
+@import "@ionic/angular/css/float-elements.css";
+@import "@ionic/angular/css/text-alignment.css";
+@import "@ionic/angular/css/text-transformation.css";
+@import "@ionic/angular/css/flex-utils.css";
+
+
+@import 'swiper/scss';
+@import 'swiper/scss/pagination';
+@import 'swiper/scss/navigation';
+
+
+
+.textoStepper{
+    font-size: 3px !important;
+  }
+  .mat-step-text-label{
+    font-size: 11px !important;
+
+  }
+
+
+  .mat-step-icon {
+    height: 15px !important;
+    width: 15px !important;
+  }
+
+
+  .mat-step-icon-content {
+    font-size: 10px !important;
+  }
+
+  .mat-step-icon .mat-icon {
+    font-size: 10px !important;
+    height: 10px !important;
+    width: 10px !important;
+  }
+
+
+  .mat-stepper-horizontal-line {
+    min-width: 5px !important;
+  }
+
+
+  .mat-horizontal-content-container {
+
+    padding: 0 !important;
+  }
+
+  .rojo, .rojo .sc-ion-action-sheet-md {
+    color: red !important;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+}

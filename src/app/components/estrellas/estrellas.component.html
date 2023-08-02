@@ -1,0 +1,12 @@
+<div class="star-rating">
+  <span *ngFor="let _ of fullStars; let i = index" class="star full-star" (click)="onStarClick(i)">
+      <mat-icon style="height: auto; width: auto;">star</mat-icon>
+  </span>
+  <span *ngIf="hasHalfStar" class="star half-star" (click)="onStarClick(fullStars.length)">
+      <mat-icon style="height: auto; width: auto;">star_half</mat-icon>
+  </span>
+  <span *ngFor="let _ of emptyStars; let i = index" class="star empty-star"
+      (click)="onStarClick(fullStars.length + (hasHalfStar ? 1 : 0) + i)">
+      <mat-icon style="height: auto; width: auto;">star_border</mat-icon>
+  </span>
+</div>

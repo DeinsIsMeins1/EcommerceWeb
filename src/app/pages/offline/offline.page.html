@@ -1,0 +1,18 @@
+<ion-content>
+  <ion-card class="cardP">
+      <div class="centrar">
+        <ion-card-content>
+          <ion-refresher slot="fixed" (ionRefresh)="handleRefresh($event)">
+            <ion-refresher-content></ion-refresher-content>
+          </ion-refresher>
+          <ion-icon name="wifi-outline" style="font-size: 120px;"></ion-icon>
+
+
+          <ion-card-title>Sin conexión</ion-card-title>
+          <br>
+          <ion-card-subtitle>Esperando...</ion-card-subtitle>
+        </ion-card-content>
+      </div>
+
+  </ion-card>
+</ion-content>

@@ -1,0 +1,63 @@
+  ion-content{
+    height: 98%;
+  }
+
+  .contenedorGeneral{
+    height: 28%;
+  }
+
+  .titulos{
+    padding-left: 6px
+  }
+
+  .iconPadding{
+    padding: 0px 4px;
+  }
+
+  .container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .text {
+    -webkit-flex: 1 0 150px;
+      flex: 1 0 150px;
+      padding: 0px 0px 0px 10px;
+      position: relative;
+  }
+
+  .tituloCard{
+    font-weight: 400;
+    color: black;
+    font-size: 20px;
+    line-height: 1;
+  }
+  
+  
+  .descripcion{
+    padding-bottom: 13px;
+  }
+
+  .verMas{
+    color: var(--Primary);
+    font-size: 15px;
+  }
+
+  .contenedorImagen {
+    direction: ltr;
+    -webkit-flex: 0 1 153px;
+    flex: 0 1 153px;
+    height: 112px;
+    overflow: hidden;
+    text-align: right;
+  }
+  
+  .imagen{
+    height: 112px;
+  }
+
+  
+
+
+
+  

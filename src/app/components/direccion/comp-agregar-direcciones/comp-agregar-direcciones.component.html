@@ -1,0 +1,167 @@
+<ion-card>
+  <ion-card-content>
+
+    <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+      <ion-list>
+        <ion-item>
+          <ion-label position="stacked">Nombre</ion-label>
+          <ion-input type="text" formControlName="nombre"></ion-input>
+        </ion-item>
+
+        <ion-text color="danger" *ngIf="formulario.controls['nombre'].invalid && formulario.controls['nombre'].touched">
+          Por favor, ingresa un nombre válido.
+        </ion-text>
+  
+        <ion-item>
+          <ion-label position="stacked">Calle</ion-label>
+          <ion-input type="text" formControlName="calle"></ion-input>
+        </ion-item>
+
+         <ion-text color="danger" *ngIf="formulario.controls['calle'].invalid && formulario.controls['calle'].touched">
+          Por favor, ingresa un texto válido.
+        </ion-text>
+  
+        <ion-item>
+          <ion-label position="stacked">Colonia</ion-label>
+          <ion-input type="text" formControlName="colonia"></ion-input>
+        </ion-item>
+
+         <ion-text color="danger" *ngIf="formulario.controls['colonia'].invalid && formulario.controls['colonia'].touched">
+          Por favor, ingresa un texto válido.
+        </ion-text>
+  
+        <ion-item>
+          <ion-label position="stacked">Estado</ion-label>
+          <ion-input type="text" formControlName="estado"></ion-input>
+        </ion-item>
+
+         <ion-text color="danger" *ngIf="formulario.controls['estado'].invalid && formulario.controls['estado'].touched">
+          Por favor, ingresa un texto válido.
+        </ion-text>
+  
+        <ion-item>
+          <ion-label position="stacked">Municipio</ion-label>
+          <ion-input type="text" formControlName="municipio"></ion-input>
+        </ion-item>
+
+         <ion-text color="danger" *ngIf="formulario.controls['municipio'].invalid && formulario.controls['municipio'].touched">
+          Por favor, ingresa un texto válido.
+        </ion-text>
+  
+        <ion-item>
+          <ion-label position="stacked">Código Postal</ion-label>
+          <ion-input type="text" formControlName="cp"></ion-input>
+        </ion-item>
+
+        <ion-text color="danger" *ngIf="formulario.controls['cp'].invalid && formulario.controls['cp'].touched">
+          Por favor, ingresa un código postal válido de 5 dígitos.
+        </ion-text>
+  
+        <ion-item>
+          <ion-label position="stacked">Número Exterior</ion-label>
+          <ion-input type="text" formControlName="numExt"></ion-input>
+        </ion-item>
+
+        <ion-text color="danger" *ngIf="formulario.controls['numExt'].invalid && formulario.controls['numExt'].touched">
+          Por favor, ingresa un numero valido.
+        </ion-text>
+  
+        <ion-item>
+          <ion-label position="stacked">Número Interior</ion-label>
+          <ion-input type="text" formControlName="numInt"></ion-input>
+        </ion-item>
+
+        <ion-text color="danger" *ngIf="formulario.controls['numInt'].invalid && formulario.controls['numInt'].touched">
+          Por favor, ingresa un numero valido.
+        </ion-text>
+  
+        <ion-item>
+          <ion-label position="stacked">Indicaciones adicionales de esta dirección</ion-label>
+          <ion-textarea formControlName="referencia"></ion-textarea>
+        </ion-item>
+  
+        <ion-item>
+          <ion-label position="stacked">Número de Teléfono</ion-label>
+          <ion-input type="tel" formControlName="telefono"></ion-input>
+        </ion-item>
+
+        <ion-text color="danger" *ngIf="formulario.controls['telefono'].invalid && formulario.controls['telefono'].touched">
+          Por favor, ingresa un telefono valido.
+        </ion-text>
+
+
+      </ion-list>
+  
+      <ion-button expand="block" type="submit" [disabled]="formulario.invalid">Enviar</ion-button>
+    </form>
+
+
+    <!-- <form #formulario="ngForm" (ngSubmit)="onSubmit()" class="form">
+
+      <div class="form-content">
+        <ion-list>
+          <ion-item>
+            <ion-label position="stacked">Nombre</ion-label>
+            <ion-input type="text" name="nombre" [(ngModel)]="direccion.nombre" #ionInputEl></ion-input>
+          </ion-item>
+          
+          <ion-item>
+            <ion-label position="stacked">Calle</ion-label>
+            <ion-input type="text" name="calle" [(ngModel)]="direccion.calle"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="stacked">Colonia</ion-label>
+            <ion-input type="text" name="colonia" [(ngModel)]="direccion.colonia"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="stacked">Estado</ion-label>
+            <ion-input type="text" name="estado" [(ngModel)]="direccion.estado"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label position="stacked">Municipio</ion-label>
+            <ion-input type="text" name="municipio" [(ngModel)]="direccion.municipio"></ion-input>
+          </ion-item>
+  
+          <ion-item>
+            <ion-label position="stacked">Código Postal</ion-label>
+            <ion-input type="text" name="cp" [(ngModel)]="direccion.cp"></ion-input>
+          </ion-item>
+          
+          <ion-item>
+            <ion-label position="stacked">Número Exterior</ion-label>
+            <ion-input type="text" name="numExt" [(ngModel)]="direccion.numExt"></ion-input>
+          </ion-item>
+          
+          <ion-item>
+            <ion-label position="stacked">Número Interior</ion-label>
+            <ion-input type="text" name="numInt" [(ngModel)]="direccion.numInt"></ion-input>
+          </ion-item>
+          
+          <ion-item>
+            <ion-label position="stacked">Indicaciones adicionales de esta direccion</ion-label>
+            <ion-textarea type="text" name="referencia" [(ngModel)]="direccion.referencia"></ion-textarea>
+          </ion-item>
+  
+                  
+          <ion-item>
+            <ion-label position="stacked">Número de Teléfono</ion-label>
+            <ion-input type="tel" name="telefono" [(ngModel)]="direccion.telefono"></ion-input>
+          </ion-item>
+    
+        </ion-list>
+      </div>
+
+     
+      <ion-button expand="block"  type="submit">
+        Agregar direccion
+      </ion-button>
+
+    </form>
+    -->
+
+
+  </ion-card-content>
+</ion-card>

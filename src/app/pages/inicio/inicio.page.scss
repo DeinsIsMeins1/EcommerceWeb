@@ -1,0 +1,49 @@
+.card {
+    height: 230px;
+}
+
+.cardHeader {
+    display: flex;
+    justify-content: center;
+    height: 125px;
+}
+.cardContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    font-size: 10px;
+    height: 46%;
+}
+
+.titulo {
+    font-weight: bold;
+    height: 20px;
+    width: 67px;
+}
+
+
+.precio {
+    text-align: left;
+    width: 100%; /* Asegura que ocupe todo el ancho disponible */
+    padding-top: 15px;
+}
+
+.thumbnail-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+
+  .divContenedor {
+    background-color: #ebebeb;
+    display: flex; /* Activa el modelo de diseño flexbox */
+    justify-content: center; /* Alinea los elementos horizontalmente en el centro */
+}
+
+.divContenido {
+    width: 1075px;
+    margin: auto; /* Ajusta automáticamente al centro horizontal */
+}

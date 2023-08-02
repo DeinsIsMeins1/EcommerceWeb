@@ -1,0 +1,76 @@
+<div class="paddingContenedorGeneral">
+  <div *ngIf="loaded">
+    <ion-text class="titulos">
+      <span class="ion-text-capitalize tituloCategoria">
+        {{categoriaSeleccionada}}
+      </span>
+    </ion-text>
+  </div>
+
+  <div *ngIf="!loaded">
+    <ion-text class="titulos">
+      <ion-skeleton-text [animated]="true" class="cargando"></ion-skeleton-text>
+
+    </ion-text>
+  </div>
+
+  <swiper [config]="config" class="swiperContainer" *ngIf="loaded">
+    <ng-template swiperSlide *ngFor="let item of contenidoCategoria">
+
+
+
+
+      <ion-card mode="md" class="card">
+        <ion-card-header class="cardHeader">
+          <ion-img src="{{item.image}}" class="cardImagen"></ion-img>
+        </ion-card-header>
+        <ion-card-content class="cardContent">
+          <div class="titulo">
+            {{item.title | slice:0:50 }}{{ item.title.length > 50? '...' : '' }}
+          </div>
+
+          <br>
+          <div class="precio">
+            $ {{item.price}}
+          </div>
+
+
+          <ion-button expand="block" class="botonAmarillo sizeContentButton nuevoButton"
+            (click)="verDetalles(item.idItem)">
+            Ver más
+          </ion-button>
+        </ion-card-content>
+      </ion-card>
+    </ng-template>
+  </swiper>
+
+
+  <swiper [config]="config" class="swiperContainer" *ngIf="!loaded">
+    <ng-template swiperSlide *ngFor="let num of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]">
+
+
+
+
+      <ion-card mode="md" class="card">
+        <ion-card-header class="cardHeader">
+          <div class="thumbnail-container">
+            <ion-thumbnail>
+              <ion-skeleton-text [animated]="true"></ion-skeleton-text>
+            </ion-thumbnail>
+          </div>
+        </ion-card-header>
+        <ion-card-content class="cardContent">
+          <div class="titulo">
+            <ion-skeleton-text [animated]="true"></ion-skeleton-text>
+          </div>
+          <br>
+          <div class="precio">
+            <ion-skeleton-text [animated]="true"></ion-skeleton-text>
+          </div>
+        </ion-card-content>
+      </ion-card>
+    </ng-template>
+  </swiper>
+
+
+</div>

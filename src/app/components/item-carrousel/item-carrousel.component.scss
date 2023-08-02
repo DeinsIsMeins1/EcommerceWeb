@@ -1,0 +1,83 @@
+.titulos {
+    padding-left: 6px
+}
+
+
+.cardHeader {
+    display: flex;
+    justify-content: center;
+
+    height: 197px;
+}
+
+.cardImagen {
+    height: 148px;
+}
+
+.cardContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    font-size: 10px;
+
+    height: 46%;
+}
+
+.titulo {
+    font-size: 15px;
+    height: 20px;
+    color: black;
+}
+
+.textoGrande {
+    font-size: 20px;
+}
+
+.textoChico {
+    font-size: 15px;
+}
+
+.precio {
+    font-weight: bold;
+    text-align: left;
+    width: 100%;
+    padding-top: 23px;
+    font-size: 20px;
+
+}
+
+.botonAmarillo {
+    margin-top: auto;
+}
+
+
+
+.thumbnail-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.card {
+    width: 207px;
+    height: 366px;
+}
+
+.nuevoButton {
+    bottom: 0;
+}
+
+.iconPadding {
+    padding: 0px 4px;
+}
+
+
+
+.tituloCategoria {
+    font-weight: 100;
+    font-size: 25px;
+}

@@ -1,0 +1,95 @@
+.precio {
+  color: var(--color-text);
+}
+
+.titulo {
+  color: var(--color-text);
+  font-size: 20px
+}
+
+.icol {
+  display: flex;
+  justify-content: center;
+  /* Centra horizontalmente */
+  align-items: center;
+  /* Centra verticalmente */
+}
+
+
+.eliminar {
+  color: var(--primary);
+}
+
+
+.imagen {
+  height: 112px;
+}
+
+
+// ion-card{
+//     display: none;
+// }
+
+
+.buttonDato {
+  font-size: 14px;
+}
+
+
+.no-favorites-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.contenedorPrincipalFavoritos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.no-favorites-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.no-favorites-icon {
+  font-size: 48px;
+}
+
+.title-with-icon {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+
+.no-favorites-message {
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.botonBorrar {
+  margin: 9px;
+}
+
+
+.buttonDetalles {
+  --background: var(--primary);
+}
+
+
+.buttonVaciar {
+  margin-right: 10px;
+  height: 26px;
+}
+
+
+.contenedorFavoritos {
+  width: 55%;
+}

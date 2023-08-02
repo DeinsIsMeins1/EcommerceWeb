@@ -1,0 +1,9 @@
+<swiper [config]="config" class="swiperContainer" *ngIf="bannerArray">
+  
+    <ng-template swiperSlide *ngFor="let banner of bannerArray">
+      <div style="width: 100%;  display: flex; justify-content: center; align-items: center;">
+        <img [src]="banner" class="imagen" (click)="mover()">
+      </div>
+    </ng-template>
+  
+</swiper>

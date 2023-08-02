@@ -1,0 +1,31 @@
+<div class="contenedorPrincipalCompDirecciones">
+  <ion-card class="card">
+    <ion-card-content *ngFor="let item of dataFromService">
+      <ion-grid fixed>
+        <ion-row>
+          <ion-col size="2" class="icol">
+            <ion-icon name="pin-outline" class="icono2"></ion-icon>
+          </ion-col>
+          <ion-col size="8" (click)="seleccionarDireccion(item.idDomicilio, item)">
+            
+            <div class="negritas">
+              {{item.nombre}}
+            </div>
+            
+            <div class="direccion">
+              Calle: {{item.calle}} - Numero Exterior: {{item.numExt}} - Colonia: {{item.colonia}} - Numero Interior: {{item.numInt}} - CP: {{item.cp}} - Referencia: {{item.referencia}}
+            </div>
+          </ion-col>
+          <ion-col size="2" class="icol">
+            <ion-button expand="block" fill="clear" shape="round" (click)="confirmDelete(item.idDomicilio)">
+              <ion-icon name="ellipsis-vertical-outline" class="icono2"></ion-icon>
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+</div>
+  
+
+

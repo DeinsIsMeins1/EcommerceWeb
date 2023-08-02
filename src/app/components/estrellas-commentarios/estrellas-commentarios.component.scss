@@ -1,0 +1,23 @@
+.star-rating {
+    display: inline-block;
+    font-size: 1rem;
+    vertical-align: middle;
+  }
+  
+  .star-rating .star {
+    cursor: pointer;
+    display: inline-block;
+    height: 1rem;
+    width: 1rem;
+    margin-right: 0.5rem;
+    position: relative;
+  }
+  
+  .star-rating .mat-icon {
+    color: orange;
+    font-size: 1rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  

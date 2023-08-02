@@ -1,0 +1,41 @@
+.card{
+    height: 230px;  
+}
+
+
+.cardHeader{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 125px;
+}
+
+.cardImagen{
+    height: 80px;
+}
+
+
+.cardContent{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 9px;
+
+}
+
+.titulo{
+    height: 20px;
+    padding-top: 6px;
+    color: black;
+    font-weight: 600;
+}
+
+.precio{
+    font-size: 9px;
+    padding-top: 10px;
+}
+
+.sizeContentButton{
+    margin-top: 15px;
+    font-size: 9px;
+    height: 21px;
+}

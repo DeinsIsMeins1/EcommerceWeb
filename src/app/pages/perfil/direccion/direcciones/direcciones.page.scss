@@ -1,0 +1,35 @@
+    .icol {
+        display: flex;
+        justify-content: center;
+        /* Centra horizontalmente */
+        align-items: center;
+        /* Centra verticalmente */
+    }
+
+    .direccion {
+        font-size: 8px;
+    }
+
+    .textoGrande {
+        font-size: 15px;
+    }
+
+    .icono2 {
+        font-size: 22px;
+        color: var(--primary);
+    }
+
+
+    .contenedorPrincipalDir {
+        display: flex;
+        justify-content: center;
+        /* Centra horizontalmente */
+        align-items: baseline;
+        height: 100%;
+        background-color: #eeeeee;
+        /* Centra verticalmente */
+    }
+
+    .contenedorDir{
+        width: 33%;
+    }

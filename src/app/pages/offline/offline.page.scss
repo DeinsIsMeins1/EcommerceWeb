@@ -1,0 +1,61 @@
+.iconoSad{
+    font-size: 100px;
+}
+
+.centrar{
+    justify-content: center;
+    text-align: center;
+}
+
+
+.cardP{
+    margin-top: 33%;
+    box-shadow: none;
+}
+
+ion-card-title{
+  text-transform: uppercase;
+  color: var(--color-gris-claro);
+  font-size: 30px;
+  font-weight:600;
+
+}
+
+ion-card-subtitle{
+  color: var(--color-azul);
+}
+
+
+.size{
+  font-size: 20px;
+}
+
+.logo-content{
+  padding-left: 20px;
+}
+
+.logo-content ion-img{
+  width: 35px;
+  height: 50px;
+  margin-right: 15px;
+}
+
+.titulo{
+  color: white;
+  font-size: 20px;
+  letter-spacing: -1px;
+  padding-right: 60px;
+}
+
+.fondo{
+  --background: #00A7E1;
+}
+
+.menu-burger{
+  color: white;
+}
+
+.toolbar{
+  box-shadow: unset !important;
+  padding-top: 0px;
+}

@@ -1,0 +1,60 @@
+<ion-card>
+  <ion-card-content>
+    <ion-list>
+      <ion-item>
+        <ion-label position="stacked">Número de tarjeta</ion-label>
+        <ion-input placeholder="Número de tarjeta" type="text"></ion-input>
+      </ion-item>
+      
+      <ion-item>
+        <ion-label position="stacked">Nombre en la tarjeta</ion-label>
+        <ion-input placeholder="Nombre en la tarjeta" type="text"></ion-input>
+      </ion-item>
+      
+      <ion-item>
+        <ion-label position="stacked">Fecha de expiración</ion-label>
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-input placeholder="MM" type="text" pattern="[0-9]{2}" maxlength="2"></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col>
+            <ion-item>
+              <ion-input placeholder="AA" type="text" pattern="[0-9]{2}" maxlength="2"></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </ion-item>
+      
+      
+      
+      
+      
+
+      
+      
+      
+      <ion-item>
+        <ion-label position="stacked">Código de seguridad</ion-label>
+        <ion-input placeholder="Código de seguridad" type="text"></ion-input>
+      </ion-item>
+      
+      <ion-item>
+        <ion-label position="stacked">Tipo de tarjeta</ion-label>
+        <ion-select placeholder="Seleccionar tipo de tarjeta">
+          <ion-select-option value="visa">Visa</ion-select-option>
+          <ion-select-option value="mastercard">Mastercard</ion-select-option>
+          <ion-select-option value="amex">American Express</ion-select-option>
+        </ion-select>
+      </ion-item>
+      
+      <ion-item>
+        <ion-label>Guardar tarjeta</ion-label>
+        <ion-checkbox slot="start"></ion-checkbox>
+      </ion-item>
+      
+      <ion-button expand="full" color="primary">Agregar tarjeta</ion-button>
+    </ion-list>
+  </ion-card-content>
+</ion-card>

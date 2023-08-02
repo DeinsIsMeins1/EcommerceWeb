@@ -1,0 +1,30 @@
+<ion-header>
+  <app-headerback titulo="Datos Personales"></app-headerback>
+</ion-header>
+<ion-content>
+
+  <div class="contenedorPrincipalInfo">
+    <ion-card class="cardDatos">
+
+      <ion-card-content>
+        <ion-list *ngIf="dataFromService">
+          <ion-item detail (click)="actualizarUsuario()">
+            <ion-label> <span class="negritas">Usuario: </span> {{ dataFromService.usuario }}</ion-label>
+          </ion-item>
+          <ion-item detail (click)="actualizarNombre()">
+            <ion-label> <span class="negritas">Nombre: </span> {{ dataFromService.nombre }}</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label><span class="negritas">Correo: </span> {{ dataFromService.correo }}</ion-label>
+          </ion-item>
+          <ion-item detail (click)="actualizarTelefono()">
+            <ion-label><span class="negritas">Teléfono: </span> {{ dataFromService.telefono }}</ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+
+
+</ion-content>

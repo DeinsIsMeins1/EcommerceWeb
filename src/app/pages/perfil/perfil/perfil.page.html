@@ -1,0 +1,21 @@
+<ion-header>
+  <app-headerback titulo="Perfil"></app-headerback>
+</ion-header>
+
+
+<ion-content>
+
+  <div class="contenedorPrincipalDatos">
+    <ion-card class="cardDatos">
+      <ion-card-content>
+        <ion-item *ngFor="let item of itemPerfil" (click)="mover(item.ruta)">
+          <ion-icon slot="start" name="{{item.icono}}"></ion-icon>
+          <ion-label>{{item.titulo}}</ion-label>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+  
+
+</ion-content>

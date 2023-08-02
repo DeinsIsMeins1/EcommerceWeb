@@ -1,0 +1,24 @@
+.webIcono{
+    font-size: 25px;
+    padding: 0 10px;
+}
+
+
+.itemFormulario{
+    border: 1px solid #fff;
+    --border-color: var(--ion-item-border-color, var(--ion-border-color, var(--ion-color-step-150, rgb(255, 255, 255))));;
+}
+
+.inputFormulario{
+    border: 0px solid #000;
+    border-radius: 50px;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    background: var(--gray4);
+    min-height: 29px;
+    width: 90%;
+    padding-left: 17px;
+}
+    
+  ion-input.has-focus {
+    --caret-color: transparent !important;
+  }

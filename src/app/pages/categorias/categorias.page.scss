@@ -1,0 +1,81 @@
+.contenedorPrincipalProductos {
+  display: flex;
+  // align-content: center;
+  // justify-content: center;
+  height: 100%;
+  width: 76%;
+}
+
+.contenedorProd{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contenedorProductos {
+  width: 26%;
+
+  flex: 0 0 auto;
+  // width: 30%;
+  /* Ajusta el ancho según tus necesidades */
+  overflow-y: auto;
+}
+
+.contenedorTotal {
+  // width: 90%;
+  flex: 1 1 auto;
+  overflow-y: auto;
+}
+
+
+.tituloSeccion{
+  margin-left: 18px;
+}
+
+.card {
+  height: 230px;
+}
+
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 125px;
+}
+
+.cardImagen {
+  height: 80px;
+}
+
+
+.cardContent {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 9px;
+
+}
+
+.titulo {
+  height: 20px;
+  padding-top: 6px;
+  color: black;
+  font-weight: 600;
+}
+
+.precio {
+  font-size: 9px;
+  padding-top: 10px;
+}
+
+.sizeContentButton {
+  margin-top: 15px;
+  font-size: 9px;
+  height: 21px;
+}
+
+.contenedorPrincipalCategorias {
+  width: 100%;
+  margin-left: 25px;
+  margin-top: 15px;
+}

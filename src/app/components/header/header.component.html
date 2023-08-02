@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar class="navbar">
+    <div class="flex-container">
+      <div class="flex-items">
+        <ion-img src="{{variables.rutasImagenes.logo}}" class="logo" (click)="moverInicio()"></ion-img>
+      </div>
+      <div class="flex-items">
+        <form class="example-form">
+          <input type="text" placeholder="Buscar..." aria-label="Number" matInput [formControl]="myControl"
+            [matAutocomplete]="auto" class="inputFormulario" (input)="buscarProducto($event)"
+            (keyup.enter)="teclaEnterPresionada()">
+          <mat-autocomplete #auto="matAutocomplete">
+            <mat-option *ngFor="let option of filteredOptions | async" [value]="option.title" class="matOption"
+              (click)="elegirItem(option.idItem)">
+              <span class="option-description">{{ option.title }}</span>
+            </mat-option>
+          </mat-autocomplete>
+        </form>
+      </div>
+      <div class="flex-items">
+        <ion-buttons slot="end">
+          <div *ngIf="cargado" style="margin-right: 20px;">
+            ¡Hola {{infouser.usuario}}!
+
+          </div>
+          <ion-button class="navbar-item" (click)="moverInicio()">
+            Inicio
+          </ion-button>
+          <ion-button class="navbar-item" (click)="moverCarrito()">
+            <ion-icon class="ion-padding" name="cart-outline"></ion-icon>
+          </ion-button>
+          <ion-button (click)="mostrarMenu()">
+            <ion-icon name="menu"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+      </div>
+    </div>
+  </ion-toolbar>
+</ion-header>

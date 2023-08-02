@@ -1,0 +1,36 @@
+<ion-card>
+  <ion-card-content *ngFor="let item of itemTarjetas">
+    <ion-grid fixed>
+      <ion-row>
+        <ion-col size="2" class="icol">
+          <ion-icon name="{{item.icon}}" class="icono2"></ion-icon>
+        </ion-col>
+        <ion-col size="8" class="icol">
+          <div class="direccion">
+            {{item.card}}
+          </div>
+        </ion-col>
+        <ion-col size="2" class="icol">
+          <ion-icon name="ellipsis-vertical-outline"></ion-icon>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card-content>
+</ion-card>
+
+<ion-card (click)="mover()">
+  <ion-card-content>
+    <ion-grid fixed>
+      <ion-row>
+        <ion-col size="2" class="icol">
+          <ion-icon name="add-circle-outline" class="icono2"></ion-icon>
+        </ion-col>
+        <ion-col size="10" class="icol">
+          <div class="direccion textoGrande">
+            Agregar nueva tarjeta
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card-content>
+</ion-card>

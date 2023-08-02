@@ -1,0 +1,320 @@
+<ion-header>
+  <!-- <app-headerback titulo="Producto"></app-headerback> -->
+  <app-header></app-header>
+</ion-header>
+
+
+<ion-content *ngIf="dataFromService">
+
+  <ion-refresher slot="fixed" (ionRefresh)="handleRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <div class="bodyCompleto">
+    <ng-container *ngIf="isLoading; else loadedContent">
+
+      <div style="padding: 0px 20px;">
+        <div
+          style="display: block; margin-left: auto; margin-right: auto; width: 163px; padding-top: 20px; padding-bottom: 30px;">
+          <ion-thumbnail style="display: block; margin-left: auto; margin-right: auto; width: 178px; height: 200px;">
+            <ion-skeleton-text [animated]="true"></ion-skeleton-text>
+          </ion-thumbnail>
+        </div>
+
+
+
+        <div>
+          <ion-skeleton-text [animated]="true"></ion-skeleton-text>
+        </div>
+        <div>
+
+          <span class="sku">
+            <ion-skeleton-text [animated]="true"></ion-skeleton-text>
+          </span>
+        </div>
+        <div>
+          <ion-skeleton-text [animated]="true"></ion-skeleton-text>
+        </div>
+        <div>
+          <ion-skeleton-text [animated]="true"></ion-skeleton-text>
+        </div>
+
+
+        <div>
+          <span>
+            <ion-skeleton-text [animated]="true"></ion-skeleton-text>
+          </span>
+          <span class="sku">
+            <ion-skeleton-text [animated]="true"></ion-skeleton-text>
+          </span>
+        </div>
+        <div>
+          <ion-skeleton-text [animated]="true"></ion-skeleton-text>
+        </div>
+        <div>
+          <ion-skeleton-text [animated]="true"></ion-skeleton-text>
+        </div>
+
+
+      </div>
+
+
+
+
+    </ng-container>
+
+    <ng-template #loadedContent>
+
+
+
+      <div class="contenedorPrincipal">
+        <div class="contenedor">
+          <div class="izquierda">
+            <ion-card class="cardIzquierdo">
+              <ion-card-content class="cardContentIzquierdo">
+
+
+                <div>
+                  <div>
+                    <div
+                      style="display: flex; justify-content: center; align-items: center; height: 212px; margin-bottom: 70px; margin-top: 35px;">
+                      <ion-img src="{{dataFromService.image}}" style="height: 200px;" class="imagenPrincipal"></ion-img>
+                    </div>
+
+                    <app-carrousel-imagenes-detalles
+                      [dataFromService]="dataFromService.image"></app-carrousel-imagenes-detalles>
+                  </div>
+
+                </div>
+
+              </ion-card-content>
+            </ion-card>
+          </div>
+          <div class="derecha">
+            <ion-card class="cardDerecho">
+              <ion-card-content class="cardContentDerecho">
+
+
+
+
+                <div style="font-size: 23px; margin-top: 10px; height: 90px;">
+                  {{dataFromService.title}}
+                </div>
+
+                <div style="padding-bottom: 15px;">
+
+                  <app-estrellas [rating]="dataFromService.rating"></app-estrellas>
+                </div>
+
+                <div style="color: var(--gray2); display: flex; justify-content: space-between; font-size: 17px;">
+                  <span (click)="agregarFavoritos(dataFromService.title, dataFromService.idItem, dataFromService.image)"
+                    [class.animacion-corazon]="favoritoAgregado" [class.corazon-rojo]="favoritoAgregado">
+                    <ion-icon name="{{ favoritoAgregado ? 'heart' : 'heart-outline' }}"></ion-icon>
+                    {{ favoritoAgregado ? 'Agregado a favoritos' : 'Agregar a favoritos' }}
+                  </span>
+
+
+
+                  <span class="sku" (click)="compartir()">
+                    <ion-icon name="share-social-outline"></ion-icon>
+                    Compartir
+                  </span>
+                </div>
+
+
+                <div style="color: var(--gray2); display: flex; justify-content: space-between; font-size: 17px;">
+                  <span>Vendido por PDX</span>
+                  <span class="sku" style="color: #2591b4;">SKU 1230813081</span>
+                </div>
+                <div style="color: var(--gray2); display: flex; justify-content: space-between; font-size: 17px;">
+                  Marca Paradox
+                </div>
+                <div class="negritas" style="font-size: 27px; padding-top: 20px; color: var(--primary)">
+                  ${{ dataFromService.price.toLocaleString('es-MX') }} MXN
+                </div>
+
+                <ion-list>
+                  <ion-item>
+                    <ion-label>Cantidad:</ion-label>
+                    <ion-select interface="popover" placeholder="Cantidad" [(ngModel)]="cantidad"
+                      (ionChange)="onSelectNumber()">
+
+                      <ng-container *ngFor="let num of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]">
+                        <ion-select-option [value]="num">{{ num }}</ion-select-option>
+                      </ng-container>
+
+
+                    </ion-select>
+                  </ion-item>
+                </ion-list>
+
+
+                <div style="margin-top: 35px;">
+                  <ion-button expand="block" type="submit" class="negritas botonAmarillo"
+                    (click)="agregarCarrito(dataFromService.idItem, dataFromService.title ,dataFromService.price,dataFromService.image, true)">
+                    Comprar ahora
+                  </ion-button>
+                  <ion-button expand="block" type="submit" class="negritas botonGris" style="margin-top: 10px;"
+                    (click)="agregarCarrito(dataFromService.idItem, dataFromService.title ,dataFromService.price,dataFromService.image, false)">
+                    Agregar al carrito
+                  </ion-button>
+                </div>
+
+
+
+
+
+
+              </ion-card-content>
+            </ion-card>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="contenedorPrincipalDescripcion">
+        <div class="contenedorDescripcion">
+          <ion-segment [(ngModel)]="selectedSegment" color="warning">
+            <ion-segment-button value="default">
+              <ion-label style="font-size: 11px;">Descripcion</ion-label>
+            </ion-segment-button>
+            <ion-segment-button value="segment">
+              <ion-label style="font-size: 11px;">Info Completa</ion-label>
+            </ion-segment-button>
+          </ion-segment>
+
+          <div class="contenedorPrincipalHijoDescripcion">
+
+            <div class="contenedorHijoDescripcion">
+
+
+
+              <div *ngIf="selectedSegment === 'default'">
+                <p class="ion-padding">
+                  {{dataFromService.descShort}}
+                </p>
+              </div>
+
+              <div *ngIf="selectedSegment === 'segment'">
+                <p class="ion-padding">
+                  {{dataFromService.descLong}}
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="linea-separadora"></div>
+
+          <div class="contenedorPrincipalComentarios">
+            <!-- <div class="favoritos ion-padding">
+            </div> -->
+            <div class="contenedorComentarios">
+              <div *ngIf="mostrarComentario" style="width: 100%;">
+                <ion-list *ngFor="let item of comentarios">
+                  <ion-item *ngIf="mostrarTodosLosComentarios || itemsLengthComentario <= 4"
+                    style="margin-left: 0px; padding-left: 0px; ">
+                    <ion-grid style="height: 100px;">
+                      <ion-row>
+                        <ion-col size="2">
+                          <ion-icon name="person-circle-outline" class="iconoComentario"></ion-icon>
+                        </ion-col>
+                        <ion-col size="10">
+                          <div
+                            style="display: flex; flex-direction: column; align-items: flex-start; text-align: left; margin-bottom: 40px;">
+                            <div style="  display: flex; flex-direction: column; align-items: flex-start; width: 100%;">
+                              <div style="  font-size: 23px; font-weight: bold; margin-right: 10px;">{{item.usuario}}
+                              </div>
+                              <div style="align-self: flex-start;">
+                                <app-estrellas-commentarios [rating]="item.rate"></app-estrellas-commentarios>
+                              </div>
+                            </div>
+                            <div style="text-align: left; font-size: 17px;">
+                              {{item.comment | slice:0:100 }}{{ item.comment.length > 100? '...' : '' }}
+                            </div>
+                          </div>
+                        </ion-col>
+                      </ion-row>
+                    </ion-grid>
+                  </ion-item>
+                </ion-list>
+                <div class="ion-justify-content-center ion-align-items-center"
+                  style="display: flex; justify-content: center;">
+                  <div *ngIf="itemsLengthComentario > 4">
+                    <div style="margin: 0 5px;">
+                      <ion-button *ngIf="!mostrarTodosLosComentarios" (click)="mostrarTodosLosComentarios = true"
+                        class="negritas botonAmarillo" style="width: 93%;">
+                        Ver comentarios
+                      </ion-button>
+                    </div>
+                    <div style="margin: 0 5px;">
+                      <ion-button *ngIf="mostrarTodosLosComentarios" (click)="mostrarTodosLosComentarios = false"
+                        class="negritas botonAmarillo" style="width: 93%;">
+                        Ver menos
+                      </ion-button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div *ngIf="!mostrarComentario"
+                style="width: 100%; display: flex; justify-content: center; align-items: center;">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                  <ion-icon name="chatbox-ellipses-outline" style="margin-bottom: 10px;"></ion-icon>
+                  <p style="text-align: center;">Se el primero en comentar</p>
+                </div>
+              </div>
+
+              <div class="contenedorPrincipalComment">
+
+                <ion-card class="cardComentar">
+                  <ion-card-content>
+                    <div class="contenedorComment">
+                      <div class="form-content">
+                        <ion-label style="margin-left: 10px;">Calificacion</ion-label>
+                        <div>
+                          <app-estrellas [isEditable]="true" (ratingChange)="onRatingChange($event)"></app-estrellas>
+                        </div>
+
+                        <div>
+                          <ion-label style="margin-left: 10px;">Comentario</ion-label>
+                          <ion-item class="itemFormulario paddingItem">
+                            <ion-textarea class="inputFormulario textArea" name="comentario" [(ngModel)]="comentario"
+                              maxlength="255" required></ion-textarea>
+                          </ion-item>
+                        </div>
+
+                      </div>
+                    </div>
+                    <div class="contenedorButton">
+                      <ion-button expand="block" type="submit" class="marginButtonLogin negritas botonAmarillo"
+                        style="margin-right: 16px; width: 25%;" (click)="enviarComentario()">
+                        Comentar
+                      </ion-button>
+                    </div>
+                  </ion-card-content>
+                </ion-card>
+
+
+
+              </div>
+
+            </div>
+          </div>
+
+
+
+        </div>
+
+
+      </div>
+
+
+    </ng-template>
+  </div>
+
+
+
+
+
+
+</ion-content>

@@ -1,0 +1,361 @@
+<ion-header>
+  <app-header></app-header>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="mostrarCarrito" class="contenedorPrincipalCarrito">
+
+
+    <div class="contenedorCarrito">
+      <mat-horizontal-stepper [linear]="false" #stepper [animationDuration]="duracion" *ngIf="componentesCargados">
+        <mat-step [stepControl]="firstFormGroup">
+          <form [formGroup]="firstFormGroup" class="formulario">
+            <div class="title-with-icon">
+              <ion-title class="ion-padding" mode="md">Productos</ion-title>
+              <ion-button (click)="vaciarCarritoConfirm()" expand="block" color="danger" class="buttonVaciar">
+                Vaciar carrito
+              </ion-button>
+            </div>
+            <div class="contenedorPrincipalProductos">
+
+              <div class="contenedorProductos">
+                <ng-template matStepLabel>Productos</ng-template>
+                <!-- <p class="titulos"><span class="negritas textoGrande"></span> </p> -->
+
+
+
+                <ion-card>
+                  <ion-card-content>
+                    <ion-grid>
+                      <ion-row *ngFor="let item of dataFromService" class="separator sizeRow">
+                        <ion-col size="3" class="sizeRow">
+                          <div class="espacioFoto">
+                            <img src="{{item.imgurl}}" style="width: 30%;" (click)="verDetalles(item.itemCode)">
+                          </div>
+                        </ion-col>
+                        <ion-col size="9" class="sizeRow">
+                          <div class="descripcion">
+                            <div (click)="verDetalles(item.itemCode)" class="tituloProducto">
+                              {{item.itemName}}
+                            </div>
+                            <div class="opciones" (click)="eliminarProducto(item.itemCode)">
+                              <ion-icon name="trash-outline" class="iconoBasura"></ion-icon>
+                            </div>
+
+                          </div>
+
+
+                          <div class="divSecundario">
+                            <div class="divCenter">
+                              <ion-select interface="popover" [placeholder]="item.quantity"
+                                (ionChange)="onSelectNumber($event, item.itemCode)" class="custom-select">
+                                <ng-container *ngFor="let num of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]">
+                                  <ion-select-option [value]="num">{{ num }}</ion-select-option>
+                                </ng-container>
+                              </ion-select>
+                            </div>
+                            <div class="divCenter">
+                              <div class="precio">
+                                ${{item.total}}
+                              </div>
+                            </div>
+                          </div>
+                        </ion-col>
+                      </ion-row>
+                    </ion-grid>
+
+                    <ion-item style="text-align: right;">
+                      <ion-label class="negritas">Total: {{totalCompra}}</ion-label>
+                    </ion-item>
+
+                  </ion-card-content>
+
+
+
+
+                </ion-card>
+
+
+              </div>
+
+              <div class="contenedorTotal">
+                <ion-card>
+                  <ion-card-content>
+                    <div style="color: black; margin-bottom: 10px;">
+                      <h2>Resumen de pago:</h2  >
+                    </div>
+                    <div>
+                      <div style="display: flex; justify-content: space-between;">
+                        <span class="totalPago">Productos:</span>
+                        <span class="totalPago">{{totalCompra}}</span>
+                      </div>
+                      <div style="display: flex; justify-content: space-between; margin-top: 10px;">
+                        <span class="totalPago">Envío:</span>
+                        <span class="totalPago">$XXX</span>
+                      </div>
+
+                      <div class="linea-separadora"></div>
+                      <div style="display: flex; justify-content: space-between;  margin-top: 10px;">
+                        <span class="totalPago">Total a pagar:</span>
+                        <span class="totalPago">{{totalCompra}}</span>
+                      </div>
+                    </div>
+
+
+
+                    <ion-button (click)="moverSiguientePunto()" expand="block" class="buttonContinuar">
+                      Continuar compra
+                    </ion-button>
+
+
+                  </ion-card-content>
+                </ion-card>
+              </div>
+
+
+            </div>
+          </form>
+        </mat-step>
+        <mat-step [stepControl]="secondFormGroup">
+          <form [formGroup]="secondFormGroup" class="formulario">
+
+
+            <div>
+              <ng-template matStepLabel>Ubicacion</ng-template>
+              <p class="titulos"><span class="negritas topico">Ubicaciones</span></p>
+
+
+              <div class="contenedorPrincipalProductos">
+                <div class="contenedorProductos">
+                  <app-comp-direcciones (itemClickeado)="moverAlSegundoPaso($event)"></app-comp-direcciones>
+
+
+                  <ion-card class="card" (click)="mover()">
+                    <ion-card-content>
+                      <ion-grid fixed>
+                        <ion-row>
+                          <ion-col size="2" class="icol">
+                            <ion-icon name="add-circle-outline" class="icono2"></ion-icon>
+                          </ion-col>
+                          <ion-col size="10" class="icol">
+                            <div class="direccion textoGrande">
+                              Agregar nueva direccion
+                            </div>
+                          </ion-col>
+                        </ion-row>
+                      </ion-grid>
+                    </ion-card-content>
+                  </ion-card>
+                </div>
+                <div class="contenedorTotal">
+                  <ion-card>
+                    <ion-card-content>
+                      <div>
+                        <div style="display: flex; justify-content: space-between;">
+                          <span class="totalPago">Productos:</span>
+                          <span class="totalPago">{{totalCompra}}</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; margin-top: 10px;">
+                          <span class="totalPago">Envío:</span>
+                          <span class="totalPago">$XXX</span>
+                        </div>
+
+                        <div class="linea-separadora"></div>
+                        <div style="display: flex; justify-content: space-between;  margin-top: 10px;">
+                          <span class="totalPago">Total a pagar:</span>
+                          <span class="totalPago">{{totalCompra}}</span>
+                        </div>
+                      </div>
+
+
+
+                      <ion-button (click)="moverSiguientePunto2()" expand="block" class="buttonContinuar">
+                        Continuar compra
+                      </ion-button>
+
+
+                    </ion-card-content>
+                  </ion-card>
+                </div>
+              </div>
+
+              <div class="paddingBoton">
+                <button mat-button matStepperPrevious>Volver</button>
+                <!-- <button mat-button matStepperNext>Siguiente</button> -->
+              </div>
+            </div>
+
+          </form>
+        </mat-step>
+
+        <mat-step [stepControl]="thirdFormGroup">
+          <form [formGroup]="thirdFormGroup" class="formulario">
+            <div>
+
+
+              <ng-template matStepLabel>Pago</ng-template>
+              <p class="titulos"><span style="font-weight: bold;">Forma de pago</span> </p>
+
+              <div class="contenedorPrincipalProductos">
+                <div class="contenedorProductos">
+                  <ion-card>
+                    <ion-card-content>
+
+                      <app-paypal *ngIf="paypalCargado" [totalCompra]="totalCompra"
+                        (pagoFinalizado)="compraRealizada()"></app-paypal>
+                    </ion-card-content>
+                  </ion-card>
+                </div>
+                <div class="contenedorTotal">
+                  <ion-card>
+                    <ion-card-content>
+                      <div>
+                        <div style="display: flex; justify-content: space-between;">
+                          <span class="totalPago">Productos:</span>
+                          <span class="totalPago">{{totalCompra}}</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; margin-top: 10px;">
+                          <span class="totalPago">Envío:</span>
+                          <span class="totalPago">$XXX</span>
+                        </div>
+
+                        <div class="linea-separadora"></div>
+                        <div style="display: flex; justify-content: space-between;  margin-top: 10px;">
+                          <span class="totalPago">Total a pagar:</span>
+                          <span class="totalPago">{{totalCompra}}</span>
+                        </div>
+                      </div>
+
+                    </ion-card-content>
+                  </ion-card>
+                </div>
+              </div>
+
+
+
+              <div class="paddingBoton">
+                <button mat-button matStepperPrevious>Volver</button>
+                <!-- <button mat-button matStepperNext>Siguiente</button> -->
+              </div>
+
+            </div>
+          </form>
+        </mat-step>
+
+        <mat-step>
+          <ng-template matStepLabel>Finalizar</ng-template>
+
+
+
+
+
+          <form class="formulario">
+
+
+            <div>
+              <ion-card class="card">
+                <div class="centrarTodo">
+                  <ion-icon name="checkmark-circle-outline" class="cardIcon"></ion-icon>
+                </div>
+                <ion-card-header>
+                  <ion-card-title class="textoCentrado cardTitulo">Compra finalizada </ion-card-title>
+                  <ion-card-subtitle class="textoCentrado cardTitulo">Estamos procesando tu pedido!</ion-card-subtitle>
+                </ion-card-header>
+
+                <ion-card>
+                  <ion-card-content>
+                    <ion-grid fixed *ngFor="let item of contenidoCarrito">
+                      <ion-row class="separator">
+                        <ion-col size="3">
+                          <div class="espacioFoto">
+                            <img src="{{item.imgurl}}" class="centered-image">
+                          </div>
+                        </ion-col>
+                        <ion-col size="5">
+                          <div class="descripcion">
+                            {{item.itemName}}
+                          </div>
+
+                          <!-- <ion-grid fixed>
+                            <ion-row>
+                              <ion-col size="12">
+                                <div class="opciones">
+                                  Eliminar
+                                </div>
+                              </ion-col>
+          
+          
+                            </ion-row>
+                          </ion-grid> -->
+                        </ion-col>
+
+                        <ion-col size="4" class="espacioBoton">
+                          <div class="contenedor">
+
+
+                            <div class="precio">
+                              ${{item.total}}
+                            </div>
+                          </div>
+
+                        </ion-col>
+                      </ion-row>
+                    </ion-grid>
+
+
+
+                  </ion-card-content>
+                </ion-card>
+
+                <ion-card class="card">
+                  <ion-card-content>
+                    <ion-grid fixed *ngFor="let item of direccionCompleta">
+                      <ion-row>
+                        <ion-col size="2" class="icol">
+                          <ion-icon name="pin-outline" class="icono2"></ion-icon>
+                        </ion-col>
+                        <ion-col size="10">
+
+                          <div class="negritas">
+                            {{item.nombre}}
+                          </div>
+
+                          <div class="direccion">
+                            Calle: {{item.calle}} - Numero Exterior: {{item.numExt}} -
+                            Colonia: {{item.colonia}} - Numero Interior: {{item.numInt}} -
+                            CP: {{item.cp}} - Referencia: {{item.referencia}}
+                          </div>
+                        </ion-col>
+                      </ion-row>
+                    </ion-grid>
+                  </ion-card-content>
+                </ion-card>
+
+              </ion-card>
+            </div>
+
+
+          </form>
+
+        </mat-step>
+      </mat-horizontal-stepper>
+    </div>
+
+  </div>
+
+
+  <div *ngIf="!mostrarCarrito">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title class="ion-text-center">
+          Carrito de Compras
+        </ion-card-title>
+      </ion-card-header>
+      <ion-card-content class="ion-text-center">
+        <ion-icon name="cart" size="large"></ion-icon>
+        <p>El carrito está vacío</p>
+      </ion-card-content>
+    </ion-card>
+
+  </div>
+</ion-content>

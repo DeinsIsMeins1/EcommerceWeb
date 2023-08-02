@@ -1,0 +1,74 @@
+<ion-header>
+  <app-headerback titulo="compras"></app-headerback>
+</ion-header>
+
+
+<ion-content>
+
+  <ion-refresher slot="fixed" (ionRefresh)="handleRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+
+  <div *ngIf="mostrarFavorito">
+
+
+      <ion-card *ngFor="let item of dataFromService">
+        <ion-card-header>
+          <ion-card-title class="titulo">Fecha de compra: {{ item.fechaCompra }}</ion-card-title>
+  
+        </ion-card-header>
+  
+  
+        <ion-card-content>
+          <ion-list>
+            <ion-item *ngFor="let producto of item.productos">
+              <ion-grid fixed>
+                <ion-row>
+                  <ion-col size="4" class="icol">
+                    <div>
+                      <ion-img src="{{ producto.imgurl }}" class="cardImagen imagen"></ion-img>
+                    </div>
+                  </ion-col>
+                  <ion-col size="8">
+                    <div (click)="verDetalles(producto.itemCode)">
+                      <ion-card-header>
+                        <div class="titulo">
+                          {{ producto.itemName }}
+                        </div>
+                      </ion-card-header>
+                      <ion-card-content class="precio">
+                        <div class="negritas">
+                          ${{ producto.total }}
+                        </div>
+                      </ion-card-content>
+                    </div>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-item>
+          </ion-list>
+        </ion-card-content>
+      </ion-card>
+
+
+    
+  </div>
+
+  <div *ngIf="!mostrarFavorito" class="contenedorPrincipalCompras">
+    
+    <ion-card class="no-favorites-card" >
+    
+      <ion-card-content>
+        <div class="no-favorites-content">
+          <ion-icon name="cart-outline" class="no-favorites-icon"></ion-icon>
+          <p class="no-favorites-message">Aun no hay compras.</p>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </div>
+  
+
+
+
+</ion-content>

@@ -1,0 +1,71 @@
+<ion-content  class="background">
+  <ion-card class="cardContenedor">
+    <ion-card-header>
+      <ion-img src="{{variables.rutasImagenes.logo}}" class="logoPadding"></ion-img>
+    </ion-card-header>
+  
+  
+    <ion-card-content>
+  
+      <ion-text class="ion-text-center tituloPadding">
+        <h1>Registro</h1>
+      </ion-text>
+  
+  
+      <form #formulario="ngForm" (ngSubmit)="onSubmit()" class="form paddingFormulario">
+  
+      <div class="form-content">
+        <ion-label class="negritas label">USUARIO</ion-label>
+        <ion-item class="itemFormulario">
+          <ion-input class="inputFormulario" type="email" name="email" [(ngModel)]="usuario.usuario" maxlength="50" [clearInput]="true" required></ion-input>
+        </ion-item>
+
+        <ion-label class="negritas label">CORREO</ion-label>
+        <ion-item class="itemFormulario">
+          <ion-input class="inputFormulario" type="email" name="email" [(ngModel)]="usuario.email" maxlength="50" [clearInput]="true" required></ion-input>
+        </ion-item>
+  
+        <ion-label class="negritas label">CONTRASEÑA</ion-label>
+        <ion-item class="itemFormulario">
+          <ion-input class="inputFormulario" [type]="passwordType" name="password" [(ngModel)]="usuario.password" maxlength="30" [clearInput]="true" required></ion-input>
+        </ion-item>
+  
+        <ion-label class="negritas label">REPETIR CONTRASEÑA</ion-label>
+        <ion-item class="itemFormulario">
+          <ion-input class="inputFormulario" [type]="passwordType" name="password" [(ngModel)]="usuario.password2" maxlength="30" [clearInput]="true" required></ion-input>
+  
+        </ion-item>
+  
+      </div>
+  
+  
+  
+  
+      <ion-button expand="block"  type="submit" class="marginButtonLogin negritas botonAmarillo">
+        Crear cuenta
+      </ion-button> 
+    </form>
+  
+    <div class="centered-text paddingContenedorSeparador">
+      <span class="line"></span>
+      <span class="text">¿Ya tienes cuenta?</span>
+      <span class="line"></span>
+    </div>
+  
+    <ion-button expand="block"  type="submit" class="marginButtonRegistro negritas botonBlanco" (click)="moverLogin()">
+      Inicia sesión aquí
+    </ion-button> 
+  
+    </ion-card-content>
+  
+  
+    <ion-text class="ion-text-center">
+      <div class="paddingTerminos">
+        Condiciones de uso | Aviso de privacidad
+        © 2023, PARADOX-ET
+      </div>
+  
+    </ion-text>
+  </ion-card>
+</ion-content>
+

@@ -1,0 +1,104 @@
+.cardContenedor{
+    width: 80%;
+
+    border-radius: 10px;
+    height: 51%;        
+}
+
+.logoPadding{
+    padding-left: 7%;
+    padding-right: 7%;
+    padding-top: 5%;
+}
+
+.paddingFormulario{
+    padding-top: 10%;
+}
+
+.label{
+    font-size: 65%;
+    padding-left: 6%;
+    color: black;
+}
+
+.itemFormulario{
+    border: 1px solid #fff;
+    --border-color: var(--ion-item-border-color, var(--ion-border-color, var(--ion-color-step-150, rgb(255, 255, 255))));;
+}
+
+.paddingItem{
+    padding-bottom: 5%;
+}
+
+.inputFormulario{
+    border: 0px solid #000;
+    border-radius: 50px;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    background: var(--gray4);
+    min-height: 35px;
+    padding-left: 17px;
+}
+
+.marginButtonLogin{
+    margin-top: 10%;
+}
+
+.paddingContenedorSeparador{
+    padding-top: 7%;
+}
+
+.centered-text {
+    display: flex;
+    align-items: center;
+}
+
+.line {
+    flex: 1;
+    height: 1px;
+    background-color: black;
+}
+
+.text {
+    padding: 0 10px;
+    text-align: center;
+}
+
+.marginButtonRegistro{
+    margin-top: 8%;
+}
+
+.paddingTerminos{
+    padding-top: 35px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+
+.centered-text2 {
+    text-align: center;
+    margin-top: 16px;
+  }
+  
+  .forgot-password-container {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .forgot-password {
+    color: blue;
+    text-decoration: underline;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .password-recovery-card {
+    max-width: 400px;
+    width: 100%;
+  }
+  
+  

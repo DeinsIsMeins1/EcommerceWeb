@@ -1,0 +1,290 @@
+.animacion-corazon {
+  animation-name: agregar-favoritos;
+  animation-duration: 1s;
+}
+
+@keyframes agregar-favoritos {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.3);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.corazon-rojo ion-icon {
+  color: red;
+}
+
+.ion-color-warning {
+  --ion-color-base: var(--primary) !important;
+  --ion-color-base-rgb: var(--primary) !important;
+  --ion-color-contrast: var(--ion-color-warning-contrast, #fff) !important;
+  --ion-color-contrast-rgb: var(--primary) !important;
+  --ion-color-shade: var(--primary) !important;
+  --ion-color-tint: var(--primary) !important;
+}
+
+.form {
+  height: 250px;
+}
+
+ion-modal {
+  --height: 345px;
+  --width: 80%;
+  --border-radius: 5px;
+  --box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+ion-modal::part(backdrop) {
+  background: rgb(0 0 0);
+  opacity: 1;
+}
+
+ion-modal ion-toolbar {
+  --background: var(--primary);
+  --color: white;
+}
+
+
+
+
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 110vh;
+}
+
+.angry-grid {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  gap: 0px;
+  height: 100%;
+  width: 85%;
+}
+
+#item-0 {
+  background-color: #D5E6AD;
+  grid-row-start: 1;
+  grid-column-start: 1;
+  grid-row-end: 4;
+  grid-column-end: 4;
+  display: flex; //Esto hace que se vuelva flex 
+  align-items: center; //Esto es para centrar lo verticalmente
+  justify-content: center; //Esto es para centrarlo horizontalmente
+
+
+
+}
+
+#item-1 {
+  background-color: #78F68E;
+  grid-row-start: 1;
+  grid-column-start: 4;
+  grid-row-end: 4;
+  grid-column-end: 6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.cardIzquierdo {
+  width: 95%;
+  height: 94%;
+}
+
+.cardDerecho {
+  width: 90%;
+  height: 94%;
+
+  display: flex;
+  justify-content: center;
+}
+
+.second-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40vh;
+}
+
+
+.divComentario {
+  background-color: #ff3c00;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  width: 85%;
+}
+
+
+.cardComentario {
+  width: 92%;
+}
+
+
+.cardContentIzquierdo {
+  height: 100%;
+}
+
+
+.cardContentDerecho {
+  height: 100%;
+
+  width: 88%;
+}
+
+.contenedorPrincipal {
+  background-color: #f2f2f2;
+  width: 100%;
+  height: 550px;
+  display: flex;
+  align-items: center; //Esto es para centrar lo verticalmente
+  justify-content: center; //Esto es para centrarlo horizontalmente
+}
+
+.contenedorPrincipalDescripcion{
+  background-color: #f2f2f2;
+  width: 100%;
+
+  display: flex;
+  align-items: center; //Esto es para centrar lo verticalmente
+  justify-content: center; //Esto es para centrarlo horizontalmente
+}
+
+
+.contenedorPrincipalHijoDescripcion{
+  display: flex;
+  align-items: center; //Esto es para centrar lo verticalmente
+  justify-content: center; //Esto es para centrarlo horizontalmente
+}
+
+.contenedorHijoDescripcion{
+  display: flex;
+  align-items: center; //Esto es para centrar lo verticalmente
+  justify-content: center; //Esto es para centrarlo horizontalmente
+  width: 90%;
+}
+
+
+.contenedorDescripcion{
+  background-color: #ffffff;
+  width: 63%;
+  padding-bottom: 26px;
+}
+
+.contenedor {
+  display: flex;
+  width: 65%;
+  height: 100%;
+  
+}
+
+.bodyCompleto{
+  // background-color: #ff3c00;
+}
+
+.izquierda {
+  // flex: 1;
+  display: flex;
+  align-items: center; //Esto es para centrar lo verticalmente
+  justify-content: center; //Esto es para centrarlo horizontalmente
+  width: 100%;
+  height: 100%;
+  // background-color: green;
+}
+
+.derecha {
+  // flex: 1;
+  width: 65%;
+  height: 100%;
+  // background-color: blue;
+  display: flex;
+  align-items: center; //Esto es para centrar lo verticalmente
+  justify-content: center; //Esto es para centrarlo horizontalmente
+}
+
+.contenedorPrincipalDescripcion{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding-bottom: 3%
+}
+
+
+
+.contenedorPrincipalComentarios{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.contenedorComentarios {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  justify-content: center;
+}
+
+
+.iconoComentario{
+  font-size: 4rem;
+}
+
+
+
+
+.linea-separadora {
+  width: 100%;
+  height: 2px;
+  background-color: #ccc;
+  margin: 30px 0px;
+}
+
+
+.contenedorPrincipalComment{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+
+.contenedorComment{
+  height: 100%;
+  width: 100%;
+}
+
+.contenedorButton {
+  display: flex;
+  justify-content: flex-end;
+
+  margin-top: 10px;
+}
+
+
+.cardComentar{
+  width: 100%;
+}
+
+.textArea{
+  background-color: rgb(240, 240, 240);
+}
+
+
+
+.imagenPrincipal:hover{
+  transform: scale(1.5);
+}

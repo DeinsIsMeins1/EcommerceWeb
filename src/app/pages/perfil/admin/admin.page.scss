@@ -1,0 +1,211 @@
+.color-box {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  margin-right: 5px;
+  border: 1px solid #000;
+  /* Ajusta el color y ancho del borde según tus preferencias */
+}
+
+
+// .custom-mat-form-field {
+//   width: 68px; /* Ajusta el ancho según tus necesidades */
+// }
+
+
+.custom-mat-form-field {
+  /* Estilos personalizados para el mat-form-field */
+  /* Por ejemplo: */
+  width: 68px;
+  height: 63px;
+}
+
+// .cardSubirImagen {
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   justify-content: center;
+//   width: 200px;
+//   height: 200px;
+//   background-color: #f2f2f2;
+//   border-radius: 10px;
+//   margin: 0 auto;
+//   /* Centrar horizontalmente */
+// }
+
+.iconoSubirImagen {
+  font-size: 48px;
+  color: #888888;
+  margin-bottom: 10px;
+}
+
+.buttonSubir {
+  display: flex;
+  justify-content: center;
+  /* Centrar horizontalmente */
+  margin-top: 10px;
+  width: 100%;
+  /* Ajustar al 100% del ancho del contenedor */
+  max-width: 200px;
+  /* Establecer un tamaño máximo */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.titulo {
+  text-align: left;
+  margin-left: 10px;
+  margin-top: 30px;
+  font-size: 19px;
+}
+
+
+.imagenPrevia {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.progressBar {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+ion-progress-bar {
+  --background: rgb(181 176 176 / 70%);
+  /* Color negro con opacidad del 50% */
+  --progress-background: var(--primary);
+}
+
+
+
+// .nombreImagen {
+//   position: absolute;
+//   bottom: 0;
+//   left: 0;
+//   width: 100%;
+//   background-color: rgb(92 92 92 / 70%);
+//   color: white;
+//   padding: 8px;
+//   font-size: 12px;
+//   font-style: italic;
+// }
+
+
+.cardSubirImagen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  // width: 200px;
+  // height: 200px;
+  // background-color: #f2f2f2;
+  // border-radius: 10px;
+  // margin: 0 auto;
+  // position: relative; /* Agregado */
+}
+
+.nombreImagen {
+  // position: absolute;
+  // bottom: 0;
+  // left: 0;
+  // width: 100%;
+  // background-color: rgb(181 176 176 / 70%);
+  // color: white;
+  // padding: 8px;
+  font-size: 12px;
+  font-style: italic;
+}
+
+
+ion-modal {
+  --height: 50%;
+  --border-radius: 16px;
+  --box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+ion-modal::part(backdrop) {
+  background: rgba(209, 213, 219);
+  opacity: 1;
+}
+
+ion-modal ion-toolbar {
+  --background: rgb(14 116 144);
+  --color: white;
+}
+
+.contenedorPrincipalAdmin {
+  display: flex;
+  background-color: #eee;
+}
+
+.contenedorOpciones {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  justify-content: normal;
+}
+
+.linea-separadora {
+  width: 100%;
+  height: 2px;
+  background-color: #ccc;
+  margin: 30px 0px;
+}
+
+
+.contenedorContenido {
+  width: 100%;
+  display: flex;
+  justify-content: normal;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.clickable-label {
+  cursor: pointer;
+}
+
+
+.cardOpciones {
+  border-radius: 8px;
+  width: 85%;
+}
+
+.inputFormulario {
+  border: 0px solid #000;
+  border-radius: 50px;
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+  background: var(--gray4);
+  min-height: 29px;
+  width: 90%;
+  padding-left: 17px;
+}
+
+.matOption {
+  margin: 6px 0px;
+}
+
+
+.contenedorCardsAdmin {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  /* Ancho del contenedor horizontal */
+}
+
+.divCentrado {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48%;
+  /* Puedes ajustar este valor según tus necesidades */
+}
+
+
+.cardOpcionesSuperior {
+  width: 250px;
+}

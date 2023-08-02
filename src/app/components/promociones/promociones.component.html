@@ -1,0 +1,27 @@
+<div  *ngFor="let item of itemPromo" class="contenedorGeneral paddingContenedorGeneral">
+
+  <div>
+    <ion-text class="titulos">
+        <ion-icon name="alert-circle-outline" class="iconPadding"> </ion-icon><span class="negritas">{{item.titulo}}</span>
+    </ion-text>
+  
+  </div>
+  
+
+  <ion-content>
+    <ion-card>
+      <ion-card-content>
+        <div class="container">
+            <div class="text">
+              <p class="tituloCard">Titulo promocion</p>
+              <p class="descripcion">Descripcion promocion</p>
+              <p class="verMas">VER MAS</p>
+            </div>
+            <div class="contenedorImagen">
+              <img src="{{item.ruta}}" alt="Descripción de la imagen" class="imagen">
+            </div>
+        </div>
+      </ion-card-content>
+    </ion-card>  
+  </ion-content>
+</div>

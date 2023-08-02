@@ -1,0 +1,51 @@
+<ion-content class="background">
+
+  <div class="container">
+    <ion-card class="cardContenedor">
+      <ion-card-header>
+        <ion-img src="{{variables.rutasImagenes.logo}}" class="logoPadding"></ion-img>
+      </ion-card-header>
+
+
+      <ion-card-content>
+
+        <ion-text class="ion-text-center tituloPadding">
+          <h1>Actualizar contraseña</h1>
+        </ion-text>
+
+
+        <form #formulario="ngForm" (ngSubmit)="onSubmit()" class="form paddingFormulario">
+
+          <div class="form-content">
+            <ion-label class="negritas label">Nueva contraseña</ion-label>
+            <ion-item class="itemFormulario paddingItem">
+              <ion-input class="inputFormulario" name="contra" [(ngModel)]="contra" maxlength="50"
+                [clearInput]="true" required></ion-input>
+            </ion-item>
+
+
+            <ion-label class="negritas label">Codigo</ion-label>
+            <ion-item class="itemFormulario paddingItem">
+              <ion-input class="inputFormulario" name="codigo" [(ngModel)]="codigo" maxlength="50"
+                [clearInput]="true" required></ion-input>
+            </ion-item>
+
+          </div>
+
+
+
+
+          <ion-button expand="block" type="submit" class="marginButtonLogin negritas botonAmarillo">
+            Actualizar
+          </ion-button>
+        </form>
+
+
+      </ion-card-content>
+
+    </ion-card>
+  </div>
+
+
+
+</ion-content>

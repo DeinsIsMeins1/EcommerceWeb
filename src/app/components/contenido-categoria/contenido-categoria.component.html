@@ -1,0 +1,45 @@
+<ion-content>
+
+
+  <ion-grid>
+    <ion-row >
+      <ion-col size="6" *ngFor="let item of dataFromService">
+        <ion-card class="cardProducto tamañoCard">
+          <ion-card-header>
+            <ion-img src="{{item.image}}" class="imagenPadding"></ion-img>
+          </ion-card-header>
+          <ion-card-content class="producto">
+            <ion-text class="titulo">
+              <div>
+                {{item.title | slice:0:30 }}{{ item.title.length > 30 ? '...' : '' }}
+              </div>
+              
+            </ion-text>
+            <br>
+            <div class="descripcion">
+              {{item.description | slice:0:100 }}{{ item.description.length > 100 ? '...' : '' }}
+            </div>
+            
+            <br>
+            <ion-text class="precio">
+              $ {{item.price}}
+            </ion-text>
+  
+            <ion-button expand="block"  class="buttonLogin botonAmarillo"  (click)="verDetalles(item.id)">
+              Agregar
+            </ion-button> 
+          </ion-card-content>
+        </ion-card>
+        
+      </ion-col>
+  
+      
+    
+  
+      
+    
+    </ion-row>
+  </ion-grid>
+
+ 
+</ion-content>

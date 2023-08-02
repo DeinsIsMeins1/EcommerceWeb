@@ -1,0 +1,143 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/login"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="ion-text-capitalize" class="ion-text-capitalize">Administrador</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+
+  <ion-refresher slot="fixed" (ionRefresh)="handleRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+
+  <div class="angry-grid">
+    <div id="item-0">&nbsp;</div>
+    <div id="item-1">
+      <div>
+
+        <ion-grid fixed>
+          <ion-row>
+            <ion-col size="6">
+              <h2 class="titulo">Banner 1</h2>
+
+              <ion-card (click)="triggerFileInput(fileInputBanner1)">
+                <img [src]="previewImage1" alt="Previsualización de la foto" *ngIf="previewImage1">
+                <ion-card-content class="nombreImagen cardSubirImagen">
+                  <ion-progress-bar [value]="loadingProgress1" class="progressBar"></ion-progress-bar>
+                  {{ mostrarNombre1 ? (mostrarNombre1 | slice:0:20) + (mostrarNombre1.length > 20 ? '...' : '') : '' }}
+                  <input type="file" #fileInputBanner1 style="display: none"
+                    (change)="onFileSelected($event, '1', 'banner')">
+                </ion-card-content>
+              </ion-card>
+
+
+            </ion-col>
+            <ion-col size="6">
+              <h2 class="titulo">Banner 2</h2>
+
+
+              <ion-card (click)="triggerFileInput(fileInputBanner2)">
+                <img [src]="previewImage2" alt="Previsualización de la foto" *ngIf="previewImage2">
+                <ion-card-content class="nombreImagen cardSubirImagen">
+                  <ion-progress-bar [value]="loadingProgress2" class="progressBar"></ion-progress-bar>
+                  {{ mostrarNombre2 ? (mostrarNombre2 | slice:0:20) + (mostrarNombre2.length > 20 ? '...' : '') : '' }}
+                  <input type="file" #fileInputBanner2 style="display: none"
+                    (change)="onFileSelected($event, '2', 'banner')">
+                </ion-card-content>
+              </ion-card>
+
+
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+
+
+
+
+
+
+
+      </div>
+
+
+      <div>
+
+        <ion-grid fixed>
+          <ion-row>
+            <ion-col size="6">
+              <h2 class="titulo">Slider 1</h2>
+              <ion-card (click)="triggerFileInput(fileInputSlider1)">
+                <img [src]="previewImage3" alt="Previsualización de la foto" *ngIf="previewImage3">
+                <ion-card-content class="nombreImagen cardSubirImagen">
+                  <ion-progress-bar [value]="loadingProgress3" class="progressBar"></ion-progress-bar>
+                  {{ mostrarNombre3 ? (mostrarNombre3 | slice:0:20) + (mostrarNombre3.length > 20 ? '...' : '') : '' }}
+                  <input type="file" #fileInputSlider1 style="display: none"
+                    (change)="onFileSelected($event, '1', 'slider')">
+                </ion-card-content>
+              </ion-card>
+            </ion-col>
+            <ion-col size="6">
+              <h2 class="titulo">Slider 2</h2>
+              <ion-card (click)="triggerFileInput(fileInputSlider2)">
+                <img [src]="previewImage4" alt="Previsualización de la foto" *ngIf="previewImage4">
+                <ion-card-content class="nombreImagen cardSubirImagen">
+                  <ion-progress-bar [value]="loadingProgress4" class="progressBar"></ion-progress-bar>
+                  {{ mostrarNombre4 ? (mostrarNombre4 | slice:0:20) + (mostrarNombre4.length > 20 ? '...' : '') : '' }}
+                  <input type="file" #fileInputSlider2 style="display: none"
+                    (change)="onFileSelected($event, '2', 'slider')">
+                </ion-card-content>
+              </ion-card>
+            </ion-col>
+
+            <ion-col size="6">
+              <h2 class="titulo">Slider 3</h2>
+              <ion-card (click)="triggerFileInput(fileInputSlider3)">
+                <img [src]="previewImage5" alt="Previsualización de la foto" *ngIf="previewImage5">
+                <ion-card-content class="nombreImagen cardSubirImagen">
+                  <ion-progress-bar [value]="loadingProgress5" class="progressBar"></ion-progress-bar>
+                  {{ mostrarNombre5 ? (mostrarNombre5 | slice:0:20) + (mostrarNombre5.length > 20 ? '...' : '') : '' }}
+                  <input type="file" #fileInputSlider3 style="display: none"
+                    (change)="onFileSelected($event, '3', 'slider')">
+                </ion-card-content>
+              </ion-card>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+
+
+
+      </div>
+
+      <ion-modal #modal trigger="open-modal">
+        <ng-template>
+          <ion-content>
+            <ion-toolbar>
+              <ion-title>Modal</ion-title>
+              <ion-buttons slot="end">
+                <ion-button color="light" (click)="modal.dismiss()">Close</ion-button>
+              </ion-buttons>
+            </ion-toolbar>
+            <ion-list>
+              <ion-item>
+                <ion-avatar slot="start">
+                  <ion-img src="https://i.pravatar.cc/300?u=b"></ion-img>
+                </ion-avatar>
+                <ion-label>
+                  <h2>Connor Smith</h2>
+                  <p>Sales Rep</p>
+                </ion-label>
+              </ion-item>
+
+            </ion-list>
+          </ion-content>
+        </ng-template>
+      </ion-modal>
+
+    </div>
+  </div>
+</ion-content>

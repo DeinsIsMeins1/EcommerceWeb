@@ -1,0 +1,230 @@
+.itemComment {
+  margin-left: 0px;
+  padding-left: 0px;
+  height: 168px;
+}
+
+
+.imagenpadding{
+  width: 35%;
+}
+
+.gridPersonal {
+
+  height: 152px;
+
+}
+
+
+.comentario {
+  height: 30px;
+  font-style: italic;
+}
+
+
+.cardComentario {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  /* Alinea los elementos a la izquierda */
+  text-align: left;
+  /* Alinea el contenido del texto a la izquierda */
+  margin-bottom: 40px;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  /* Cambia a columna para apilar los elementos verticalmente */
+  align-items: flex-start;
+  /* Alinea los elementos a la izquierda */
+  width: 100%;
+}
+
+.buttonDetalles {
+  --background: var(--primary);
+}
+
+
+.title {
+  
+  width: 100%;
+
+  font-size: 14px;
+  font-weight: bold;
+  margin-right: 10px;
+  text-align: center;
+  /* Agrega un margen derecho para separar el título de las estrellas */
+}
+
+
+
+.stars {
+
+  align-self: flex-start;
+  /* Alinea las estrellas a la izquierda dentro del contenedor */
+}
+
+
+.content {
+  text-align: left;
+  font-size: 10px;
+  width: 275px;
+}
+
+.form {
+  height: 250px;
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 89%;
+  margin: auto;
+  max-width: 320px;
+  /* Ajusta el valor según sea necesario */
+  padding: 20px;
+}
+
+.toolbarComentario {
+  height: 29px !important;
+  --height: 26px !important;
+  --min-height: 26px !important;
+  --max-height: 26px !important;
+}
+
+
+
+ion-modal {
+  --height: 345px;
+  --width: 18%;
+  --border-radius: 5px;
+  --box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+ion-modal::part(backdrop) {
+  background: rgb(0 0 0);
+  opacity: 1;
+}
+
+ion-modal ion-toolbar {
+  --background: var(--primary);
+  --color: white;
+}
+
+.tituloComment {
+  margin-left: 10px;
+}
+
+.buttonComment {
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  /* Ajusta el valor del ancho según sea necesario */
+  margin-top: 36px;
+}
+
+
+.no-favorites-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.no-favorites-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.no-favorites-icon {
+  font-size: 36px;
+}
+
+.no-favorites-message {
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+
+.contenidoComentario {
+  margin-top: 30px;
+  
+}
+
+.contenedorEstrellas {
+  margin-top: 18px;
+}
+
+
+.contenidoGeneral {
+  margin-top: 23px;
+}
+
+.contenedorPrincipalComentarios {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.contenedorComentarios {
+  width: 75%;
+  margin: 10px 0px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.divHorizontal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%; /* Ancho del contenedor horizontal */
+  margin-right: 10px; /* Espacio de separación entre los divs */
+}
+
+.divCentrado{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.divImg{
+  width: 20%;
+}
+
+.divTitulo {
+  width: 180px;
+}
+.linea-separadora {
+  width: 100%;
+  height: 1px;
+  background-color: #eee;
+  margin: 30px 0px;
+}
+
+
+.divMargin{
+  margin-left: 35px;
+}
+
+
+.divHorizontal > div.divCentrado{
+  width: 20%;
+}

@@ -1,0 +1,116 @@
+.cardContenedor {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 90%;
+  margin: auto;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: normal;
+  /* Centra verticalmente */
+  align-items: center;
+  /* Centra horizontalmente */
+  background-color: white;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+
+.cardContent{
+  padding: 53px 16px;
+}
+
+
+/* Resto de tus estilos SCSS aquí */
+
+.logoPadding {
+  padding-left: 7%;
+  padding-right: 7%;
+  padding-top: 5%;
+}
+
+.paddingFormulario {
+  padding-top: 4%;
+}
+
+.label {
+  font-size: 65%;
+  padding-left: 6%;
+  color: black;
+}
+
+.itemFormulario {
+  border: 1px solid #fff;
+  --border-color: var(--ion-item-border-color, var(--ion-border-color, var(--ion-color-step-150, rgb(255, 255, 255))));
+}
+
+.paddingItem {
+  padding-bottom: 5%;
+}
+
+.inputFormulario {
+  border: 0px solid #000;
+  border-radius: 50px;
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+  background: var(--gray4);
+  min-height: 35px;
+  padding-left: 17px;
+}
+
+.marginButtonLogin {
+  margin-top: 10%;
+}
+
+.paddingContenedorSeparador {
+  padding-top: 7%;
+}
+
+.centered-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Centra horizontalmente */
+}
+
+.line {
+  flex: 1;
+  height: 1px;
+  background-color: black;
+}
+
+.text {
+  padding: 0 10px;
+  text-align: center;
+}
+
+.marginButtonRegistro {
+  margin-top: 8%;
+}
+
+.paddingTerminos {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.centered-text2 {
+  text-align: center;
+  margin-top: 16px;
+}
+
+.forgot-password-container {
+  display: flex;
+  justify-content: center;
+}
+
+.forgot-password {
+  color: var(--primary);
+  text-decoration: underline;
+}
+
+ion-item.sc-ion-input-md-h:not(.item-label):not(.item-has-modern-input),
+ion-item:not(.item-label):not(.item-has-modern-input) .sc-ion-input-md-h {
+  --padding-start: 18px;
+}

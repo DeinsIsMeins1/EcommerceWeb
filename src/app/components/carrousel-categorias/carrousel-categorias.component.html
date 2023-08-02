@@ -1,0 +1,13 @@
+
+<div>
+
+      <ion-list >
+
+        <div *ngFor="let categoria of productosAgrupados | keyvalue" (click)="moverCategoria(categoria.key)" class="contenedorPrincipalCategorias">
+          <span>{{ categoria.key }}</span>
+        </div>
+  
+      </ion-list>
+
+</div>
+

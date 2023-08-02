@@ -1,0 +1,106 @@
+<ion-header>
+  <app-headerback titulo="Mis comentarios"></app-headerback>
+</ion-header>
+
+
+<ion-content>
+
+  <ion-refresher slot="fixed" (ionRefresh)="handleRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <div *ngIf="!mostrarComentario">
+    <ion-card class="no-favorites-card">
+      <ion-card-content>
+        <div class="no-favorites-content">
+          <ion-icon name="chatbox-ellipses-outline" class="no-favorites-icon"></ion-icon>
+          <p class="no-favorites-message">Aun no haz hecho ningun comentario</p>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+  <div *ngIf="mostrarComentario" class="contenidoGeneral">
+
+    <div class="contenedorPrincipalComentarios">
+      <div class="contenedorComentarios" *ngFor="let item of comentarios">
+        <div class="divHorizontal">
+          <div class="divCentrado divImg">
+            <ion-img src="{{item.image}}" class="imagenpadding"></ion-img>
+          </div>
+          <div class="divCentrado divTitulo">
+            <div class="title">{{item.title}}</div>
+          </div>
+          <div class="divCentrado">
+            <app-estrellas-commentarios [rating]="item.rate"></app-estrellas-commentarios>
+          </div>
+          <div class="divCentrado">
+            <div class="comentario">
+              {{item.comment | slice:0:20 }}{{ item.comment.length > 20? '...' : '' }}
+            </div>
+          </div>
+          <div class="divCentrado">
+            <div class="negritas">
+              <ion-button expand="block" color="danger" class="buttonDato" (click)="confirmDelete(item.id)">
+                Eliminar
+              </ion-button>
+            </div>
+
+            <div class="negritas">
+              <ion-button expand="block" class="buttonDato buttonDetalles" (click)="setOpen(true)">
+                Editar
+              </ion-button>
+            </div>
+          </div>
+        </div>
+        <div class="linea-separadora"></div>
+
+        <ion-modal #modal [isOpen]="isModalOpen" [backdropDismiss]="false">
+          <ng-template>
+            <ion-content class="modal-content">
+              <ion-toolbar class="toolbarComentario">
+                <ion-buttons slot="end">
+                  <ion-button color="light" (click)="cerrarModal()">
+                    <ion-icon name="close-outline"></ion-icon>
+                  </ion-button>
+                </ion-buttons>
+              </ion-toolbar>
+              <div class="content-container">
+                <form #formulario="ngForm" (ngSubmit)="actualizarComentario(item.id)" class="form paddingFormulario">
+                  <div class="form-content">
+                    <ion-label class="tituloComment">Calificacion</ion-label>
+                    <div class="contenedorEstrellas">
+                      <app-estrellas [isEditable]="true" (ratingChange)="onRatingChange($event)"></app-estrellas>
+                    </div>
+      
+      
+                    <div class="contenidoComentario">
+                      <ion-label class="tituloComment">Comentario</ion-label>
+                      <ion-item>
+                        <ion-textarea name="comentario" [(ngModel)]="comentario" maxlength="255" required></ion-textarea>
+                      </ion-item>
+                    </div>
+      
+                  </div>
+                  <ion-button expand="block" type="submit" class="marginButtonLogin negritas botonAmarillo buttonComment">
+                    Comentar
+                  </ion-button>
+                </form>
+              </div>
+            </ion-content>
+          </ng-template>
+        </ion-modal>
+      </div>
+
+    </div>
+
+
+
+  </div>
+
+
+  
+
+
+
+</ion-content>
